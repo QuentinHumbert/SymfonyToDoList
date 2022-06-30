@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * User
@@ -11,7 +10,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="user", uniqueConstraints={@ORM\UniqueConstraint(name="UNIQ_8D93D649F85E0677", columns={"username"})})
  * @ORM\Entity
  */
-#[UniqueEntity(fields: ['username'], message: 'There is already an account with this username')]
 class User
 {
     /**
@@ -22,22 +20,27 @@ class User
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
     /**
      * @var string
      *
      * @ORM\Column(name="username", type="string", length=180, nullable=false)
      */
     private $username;
+
     /**
      * @var array
      *
      * @ORM\Column(name="roles", type="json", nullable=false)
      */
     private $roles;
+
     /**
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=255, nullable=false)
      */
     private $password;
+
+
 }

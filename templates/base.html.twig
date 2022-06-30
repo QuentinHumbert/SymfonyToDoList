@@ -16,9 +16,11 @@
         {% endblock %}
     </head>
     <body>
-        <header class="bg-dark h-25 d-flex justify-content-between">
-        <h1 class="fs-3 text-light">To Do List</h1>
-        <button class="btn btn-primary" type ="button">Se connecter</button>
+        <header>
+            <nav class="bg-dark d-flex justify-content-between h-45">
+                <h1 class="fs-3 text-light">To Do List</h1>
+                <button class="btn btn-primary btn-sm" type ="button">Se connecter</button>
+            </nav>
         </header>
         {% block body %}{% endblock %}
         <footer>
